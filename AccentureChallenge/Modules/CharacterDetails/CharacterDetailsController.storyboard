@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Character Details Controller-->
+        <scene sceneID="Was-4v-nef">
+            <objects>
+                <viewController storyboardIdentifier="CharacterDetailsController" id="Bbx-lP-uQc" customClass="CharacterDetailsController" customModule="AccentureChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eLe-wb-hM9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-Oz-jcY">
+                                <rect key="frame" x="117" y="56" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="YYN-cJ-Thf"/>
+                                    <constraint firstAttribute="height" constant="180" id="uCF-aN-X1P"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-dY-llw">
+                                <rect key="frame" x="15" y="250" width="384" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zNk-64-CKq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsH-VZ-NPI">
+                                <rect key="frame" x="15" y="279" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0am-Us-DhW">
+                                <rect key="frame" x="134.5" y="307.5" width="145" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="o5W-xl-ssE"/>
+                                    <constraint firstAttribute="height" constant="45" id="sxT-OF-SxF"/>
+                                </constraints>
+                                <state key="normal" title="Ver HQ mais cara">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressedButton:" destination="Bbx-lP-uQc" eventType="touchUpInside" id="6zj-Xh-3R8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0am-Us-DhW" firstAttribute="centerX" secondItem="OsH-VZ-NPI" secondAttribute="centerX" id="1f9-4y-uWS"/>
+                            <constraint firstItem="RCB-dY-llw" firstAttribute="top" secondItem="eAI-Oz-jcY" secondAttribute="bottom" constant="14" id="4aT-WC-uYr"/>
+                            <constraint firstItem="RCB-dY-llw" firstAttribute="leading" secondItem="8FA-rh-bZV" secondAttribute="leading" constant="15" id="Jn6-BP-pHy"/>
+                            <constraint firstItem="OsH-VZ-NPI" firstAttribute="leading" secondItem="8FA-rh-bZV" secondAttribute="leading" constant="15" id="Nz7-Z4-q0h"/>
+                            <constraint firstItem="8FA-rh-bZV" firstAttribute="trailing" secondItem="RCB-dY-llw" secondAttribute="trailing" constant="15" id="Vaw-3n-VFD"/>
+                            <constraint firstItem="OsH-VZ-NPI" firstAttribute="top" secondItem="RCB-dY-llw" secondAttribute="bottom" constant="8" id="ZzE-z3-cZu"/>
+                            <constraint firstItem="8FA-rh-bZV" firstAttribute="trailing" secondItem="OsH-VZ-NPI" secondAttribute="trailing" constant="15" id="aJQ-YT-zA6"/>
+                            <constraint firstItem="0am-Us-DhW" firstAttribute="top" secondItem="OsH-VZ-NPI" secondAttribute="bottom" constant="8" id="lt7-wG-xVr"/>
+                            <constraint firstItem="eAI-Oz-jcY" firstAttribute="centerX" secondItem="8FA-rh-bZV" secondAttribute="centerX" id="sNb-MW-x0b"/>
+                            <constraint firstItem="eAI-Oz-jcY" firstAttribute="top" secondItem="8FA-rh-bZV" secondAttribute="top" constant="12" id="z9I-ZY-ROw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8FA-rh-bZV"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="eAI-Oz-jcY" id="VkT-et-YVp"/>
+                        <outlet property="characterDescriptionLabel" destination="OsH-VZ-NPI" id="Qw0-lZ-GIh"/>
+                        <outlet property="characterNameLabel" destination="RCB-dY-llw" id="mXB-I5-soj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0v-eF-ASE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="206" y="74"/>
+        </scene>
+    </scenes>
+</document>

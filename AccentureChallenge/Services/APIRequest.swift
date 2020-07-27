@@ -19,6 +19,7 @@ protocol APIRequest {
 }
 
 extension APIRequest {
+
     func request(with baseURL: URL) -> URLRequest {
         guard var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
             fatalError("Unable to create URL components")
@@ -28,9 +29,12 @@ extension APIRequest {
             URLQueryItem(name: String($0), value: String($1))
         }
 
+        components.addMarvelAuthentication()
+
         guard let url = components.url else {
             fatalError("Could not get url")
         }
+
 
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
