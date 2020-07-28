@@ -64,6 +64,7 @@ final class CharactersListController: UIViewController {
 
     var isLoading: Bool = false {
         didSet {
+            // TODO: Improvement, use tableView.reloadRows()
             self.tableView.reloadData()
         }
     }
