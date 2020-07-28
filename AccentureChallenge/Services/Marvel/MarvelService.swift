@@ -11,9 +11,30 @@ import Foundation
 enum MarvelServiceError: Error {
     case parsingError
     case apiError
+    
+    var localizedDescription: String {
+        switch self {
+        case .apiError:
+            return "Erro ao consultar a API"
+            
+        case .parsingError:
+            return "Encontramos um erro desconhecido"
+        }
+    }
 }
 
 class MarvelService: ServiceInterface {
+    fileprivate struct MarvelAuth {
+        static let marvelAuth = "MarvelAuth"
+        static let apiKey = "ApiKey"
+        static let privateKey = "PrivateKey"
+    }
+    
+    static let marvelAuthInfo = Bundle.main.object(forInfoDictionaryKey: MarvelService.MarvelAuth.marvelAuth) as! [String: String]
+    static let apiKey = MarvelService.marvelAuthInfo[MarvelService.MarvelAuth.apiKey]
+    static let privateKey = MarvelService.marvelAuthInfo[MarvelService.MarvelAuth.privateKey]
+    
+    
     var baseURL: URL? = URL(string: "https://gateway.marvel.com:443")
 
     func send<T:Decodable>(apiRequest: APIRequest, callback: @escaping (Result<T, Error>) -> Void) {
